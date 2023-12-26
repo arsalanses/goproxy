@@ -17,6 +17,10 @@ services:
 #      - "8081:8081"
     volumes:
       - goproxy-data:/go
+    environment:
+      - HTTPS_PROXY=socks5h://127.0.0.1:443
+      - HTTP_PROXY=socks5h://127.0.0.1:443
+      - http_proxy=socks5h://127.0.0.1:443
 
 volumes:
   goproxy-data:
