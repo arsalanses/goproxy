@@ -22,11 +22,19 @@ services:
 #      - "8081:8081"
     volumes:
       - goproxy-data:/go
+      - ./download.hcl:/root/download.hcl
     environment:
-      - HTTPS_PROXY=socks5h://127.0.0.1:443
-      - https_proxy=socks5h://127.0.0.1:443
-      - HTTP_PROXY=socks5h://127.0.0.1:443
-      - http_proxy=socks5h://127.0.0.1:443
+      - ATHENS_DOWNLOAD_MODE=file:/root/download.hcl
+
+      - http_proxy=${PROXY}
+      - https_proxy=${PROXY}
+      - HTTP_PROXY=${PROXY}
+      - HTTPS_PROXY=${PROXY}
+      - all_proxy=${PROXY}
+      - ALL_PROXY=${PROXY}
+
+      - no_proxy=${NO_PROXY}
+      - NO_PROXY=${NO_PROXY}
     logging:
       driver: "json-file"
       options:
