@@ -1,5 +1,9 @@
 # goproxy
 
+<p align="center">
+    <img src="./architecture.png" alt="diagram" width="70%">
+</p>
+
 ## Description
 This repository contains a Docker Compose file for setting up a GoProxy service using [Athens](https://github.com/gomods/athens) and Nginx as a reverse proxy.
 This repo is inspired by [Why you should use a go module proxy](https://arslan.io/2019/08/02/why-you-should-use-a-go-module-proxy/)
